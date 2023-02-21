@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style type="text/css">
+        .container {
+            margin: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="/printLabel" method="post" target="_blank">
+            <div style="display: flex;">
+                <div>
+                    <label for="servingsize">Serving size:</label><br />
+                    <input type="text" id="servingsize" name="servingsize" value="2/3 cup (55g)" /><br /><br />
+
+                    <label for="calories">Calories:</label><br />
+                    <input type="text" id="calories" name="calories" value="230" /><br /><br />
+
+                    <!-- Total Fat -->
+                    <label for="totalfat">Total Fat:</label><br />
+                    <input type="text" id="totalfat" name="totalfat" value="8g" />
+                    <input type="text" id="totalfatper" name="totalfatper" value="10%" />
+                    <br /><br />
+
+                    <label for="saturatedfat">Saturated Fat:</label><br />
+                    <input type="text" id="saturatedfat" name="saturatedfat" value="1g" /><input type="text"
+                        id="saturatedfatper" name="saturatedfatper" value="5%" /><br /><br />
+
+                    <label for="transfat">Trans Fat:</label><br />
+                    <input type="text" id="transfat" name="transfat" value="0g" />
+                    <!-- <input type="text" id="transfatper"  name="transfatper" value="0%" /> -->
+                    <br /><br />
+
+                    <!-- Cholesterol -->
+                    <label for="cholesterol">Cholesterol:</label><br />
+                    <input type="text" id="cholesterol" name="cholesterol" value="0mg" /><input type="text"
+                        id="cholesterolper" name="cholesterolper" value="0%" /><br /><br />
+
+                    <!-- Sodium -->
+                    <label for="sodium">Sodium:</label><br />
+                    <input type="text" id="sodium" name="sodium" value="160g" /><input type="text" id="sodiumper"
+                        name="sodiumper" value="7%" /><br /><br />
+                </div>
+                <div style="margin-left: 10px;">
+                    <!-- Total Carbohydrate -->
+                    <label for="totalcarbohydrate">Total Carbohydrate:</label><br />
+                    <input type="text" id="totalcarbohydrate" name="totalcarbohydrate" value="37g" />
+                    <input type="text" id="totalcarbohydrateper" name="totalcarbohydrateper" value="13%" /><br /><br />
+
+                    <label for="dietaryfiber">Dietary Fiber:</label><br />
+                    <input type="text" id="dietaryfiber" name="dietaryfiber" value="4g" />
+                    <input type="text" id="dietaryfiberper" name="dietaryfiberper" value="14%" /><br /><br />
+
+                    <label for="totalsugars">Total Sugars:</label><br />
+                    <input type="text" id="totalsugars" name="totalsugars" value="12g" /><br /><br />
+
+                    <label for="includsugars">Includes added Sugars:</label><br />
+                    <input type="text" id="includsugars" name="includsugars" value="160g" />
+                    <input type="text" id="includsugarsper" name="includsugarsper" value="20%" /><br /><br />
+
+
+                    <!-- Protein -->
+                    <label for="protein">Protein:</label><br />
+                    <input type="text" id="protein" name="protein" value="3g" /> <br /><br />
+
+                    <!-- Vitamin D -->
+                    <label for="vitamind">Vitamin D :</label><br />
+                    <input type="text" id="vitamind" name="vitamind" value="2mcg" />
+                    <input type="text" id="vitamindper" name="vitamindper" value="10%" /><br /><br />
+
+                    <!-- Calcium -->
+                    <label for="calcium">Calcium :</label><br />
+                    <input type="text" id="calcium" name="calcium" value="260mg" />
+                    <input type="text" id="calciumper" name="calciumper" value="20%" /><br /><br />
+
+                    <!-- Iron -->
+                    <label for="iron">Iron :</label><br />
+                    <input type="text" id="iron" name="iron" value="8mg" />
+                    <input type="text" id="ironper" name="ironper" value="45%" /><br /><br />
+
+                    <!-- Potassium  -->
+                    <label for="potassium">Potassium :</label><br />
+                    <input type="text" id="potassium" name="potassium" value="240mg" />
+                    <input type="text" id="potassiumper" name="potassiumper" value="6%" /><br /><br />
+                </div>
+            </div>
+            <input type="submit" value="Print Label" />
+        </form>
+    </div>
+</body>
+
+</html>

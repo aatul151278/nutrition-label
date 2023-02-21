@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style type="text/css">
+        body {
+            font-family: sans-serif;
+            width: 8cm;
+            padding: 10px;
+            background: white;
+        }
+
+        .small-divider {
+            background-color: #0e0e0e;
+            height: 1px;
+            width: 98%;
+            margin-left: 1%;
+        }
+
+        .medium-divider {
+            background-color: #0e0e0e;
+            height: 5px;
+            width: 98%;
+            margin-left: 1%;
+        }
+
+        .divider {
+            background-color: #0e0e0e;
+            height: 15px;
+            width: 98%;
+            margin-left: 1%;
+        }
+
+        .label-container {
+            border: 1px solid #0e0e0e;
+            height: auto;
+            padding: 5px;
+        }
+
+        .header {
+            text-align: center;
+        }
+
+        .h-title {
+            padding: 0px;
+            font-size: 32px;
+            font-weight: 900;
+        }
+
+        .sub-header,
+        .sub-header-2 {
+            margin: 0 1% 0 1%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            text-align: left;
+        }
+
+        .sub-header .title {
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .sub-header-2 .lf-title {
+            font-size: 28px;
+            font-weight: 900;
+        }
+
+        .sub-header-2 small {
+            font-weight: 700;
+        }
+
+        .sub-header-2 .rt-amount {
+            font-size: 40px;
+            font-weight: 800;
+        }
+
+        .detail-view-label {
+            float: right;
+            font-size: 10px;
+            font-weight: bold;
+            margin-top: 2px;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            margin: 2px;
+
+        }
+
+        .info-row .label,
+        .detail-info-row .label {
+            font-weight: 800;
+        }
+
+        .label-per {
+            font-size: 14px;
+            font-weight: 800;
+        }
+
+        .info-row .sub-label,
+        .detail-info-row .sub-label {
+            font-size: 11px;
+            margin-left: 5px;
+        }
+
+        .detail-info-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            margin-left: 20px;
+            margin-top: 2px;
+            margin-bottom: 2px;
+        }
+
+        .bottom-info-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            margin: 5px;
+        }
+
+        .bottom-info-row .sub-label{
+            margin-left: 5px;
+        }
+
+        .footer {
+            font-size: 10px;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="label-container">
+
+        <div class="header">
+            <span class="h-title">Nutrition Facts</span>
+            <div class="small-divider"></div>
+            <div class="sub-header">
+                <div class="title">Serving size</div>
+                <div class="title">{servingsize}</div>
+            </div>
+            <div class="divider"> </div>
+            <div class="sub-header-2">
+                <div>
+                    <small>Amount per serving</small>
+                    <div class="lf-title">Calories</div>
+                </div>
+                <div class="rt-amount">{calories}</div>
+            </div>
+        </div>
+        <div class="medium-divider"> </div>
+        <div class="center">
+
+            <div class="detail-view-label">% Daily Value*</div><br />
+            <div class="small-divider"></div>
+
+            <div class="info-row">
+                <div>
+                    <span class="label">Total Fat</span><span class="sub-label">{totalfat}</span>
+                </div>
+                <div>
+                    <span class="label-per">{totalfatper}</span>
+                </div>
+            </div>
+            <div class="small-divider"></div>
+            <div class="detail-info-row">
+                <div>
+                    <span>Saturated Fat</span><span class="sub-label">{saturatedfat}</span>
+                </div>
+                <div>
+                    <span class="label-per">{saturatedfatper}</span>
+                </div>
+            </div>
+            <div class="small-divider"></div>
+            <div class="detail-info-row">
+                <div>
+                    <span>Trans Fat</span><span class="sub-label">{transfat}</span>
+                </div>
+                <div>
+                    <!-- <span class="label-per">{transfatper}</span> -->
+                </div>
+            </div>
+            <div class="small-divider"></div>
+            <div class="info-row">
+                <div>
+                    <span class="label">Cholesterol</span><span class="sub-label">{cholesterol}</span>
+                </div>
+                <div>
+                    <span class="label-per">{cholesterolper}</span>
+                </div>
+            </div>
+            <div class="small-divider"></div>
+            <div class="info-row">
+                <div>
+                    <span class="label">Sodium</span><span class="sub-label">{sodium}</span>
+                </div>
+                <div>
+                    <span class="label-per">{sodiumper}</span>
+                </div>
+            </div>
+            <div class="small-divider"></div>
+            <div class="info-row">
+                <div>
+                    <span class="label">Total Carbohydrate</span><span class="sub-label">{totalcarbohydrate}</span>
+                </div>
+                <div>
+                    <span class="label-per">{totalcarbohydrateper}</span>
+                </div>
+            </div>
+            <div class="small-divider"></div>
+            <div class="detail-info-row">
+                <div>
+                    <span>Dietary Fiber</span><span class="sub-label">{dietaryfiber}</span>
+                </div>
+                <div>
+                    <span class="label-per">{dietaryfiberper}</span>
+                </div>
+            </div>
+            <div class="small-divider"></div>
+            <div class="detail-info-row">
+                <div>
+                    <span>Total Sugars</span><span class="sub-label">{totalsugars}</span>
+                </div>
+                <div>
+                </div>
+            </div>
+            <div class="small-divider"></div>
+            <div class="detail-info-row">
+                <div>
+                    <span style="margin-left:10px;">Includes</span><span class="sub-label">{includsugars}</span> Added
+                    Sugars
+                </div>
+                <div>
+                    <span class="label-per">{includsugarsper}</span>
+                </div>
+            </div>
+
+            <div class="small-divider"></div>
+
+            <div class="info-row">
+                <div>
+                    <span class="label">Protein</span><span class="sub-label">{protein}</span>
+                </div>
+                <div>
+                </div>
+            </div>
+
+            <!-- footer -->
+            <div class="divider"> </div>
+
+            <div class="bottom-info-row">
+                <div>
+                    <span>Vitamin D</span><span class="sub-label">{vitamind}</span>
+                </div>
+                <div>
+                    <span class="label">{vitamindper}</span>
+                </div>
+            </div>
+            <div class="small-divider"></div>
+            <div class="bottom-info-row">
+                <div>
+                    <span>Calcium</span><span class="sub-label">{calcium}</span>
+                </div>
+                <div>
+                    <span class="label">{calciumper}</span>
+                </div>
+            </div>
+            <div class="small-divider"></div>
+            <div class="bottom-info-row">
+                <div>
+                    <span>Iron</span><span class="sub-label">{iron}</span>
+                </div>
+                <div>
+                    <span class="label">{ironper}</span>
+                </div>
+            </div>
+            <div class="small-divider"></div>
+            <div class="bottom-info-row">
+                <div>
+                    <span>Prtassium</span><span class="sub-label">{potassium}</span>
+                </div>
+                <div>
+                    <span class="label">{potassiumper}</span>
+                </div>
+            </div>
+        </div>
+        <div class="medium-divider"> </div>
+        <div class="footer">
+            *The % Daily Value(DV) tells you how much a nutrient in
+            a serving of food contributes to a daily diet. 2,000 calories
+            a day is used for general nutrition advice.
+        </div>
+
+    </div>
+</body>
+
+</html>
