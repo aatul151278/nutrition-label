@@ -4,6 +4,7 @@ import path from 'path';
 import puppeteer from 'puppeteer';
 import * as fs from 'fs';
 const filedir = path.join(__dirname);
+import * as ChromeLauncher from 'chrome-launcher';
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -14,8 +15,11 @@ const indexPage = filedir + "/index.html";
 const printLabel = async (html: string): Promise<any> => {
     return new Promise(async (resolve) => {
         try {
+            // const sd = await ChromeLauncher.launch();
+            console.log("PATH", ChromeLauncher.getChromePath())
             const puppeteerInstance = await puppeteer.launch({
                 // headless: true,
+                executablePath: ChromeLauncher.getChromePath(),
                 args: ['--no-sandbox']
             });
             const page = await puppeteerInstance.newPage();
