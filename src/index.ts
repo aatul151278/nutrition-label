@@ -10,9 +10,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 const indexPage = filedir + "/index.html";
-app.get('/', function (req, res) {
-    res.sendFile(indexPage)
-});
 
 const printLabel = async (html: string): Promise<any> => {
     return new Promise(async (resolve) => {
@@ -39,7 +36,7 @@ const printLabel = async (html: string): Promise<any> => {
             await page.close();
             await puppeteerInstance.close();
             return resolve(filepath);
-        } catch (err) { }
+        } catch (err) { console.log("err", err) }
         return resolve(null);
     })
 };
@@ -94,6 +91,10 @@ app.post('/printLabel', async function (req: Request, res: Response) {
         res.json({ success: false, message: "something went wrong" });
     }
 })
+
+app.get('/', function (req, res) {
+    res.sendFile(indexPage)
+});
 
 app.listen(1101, function () {
     console.log('App listening on port ' + 1101)
