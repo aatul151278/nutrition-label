@@ -16,9 +16,7 @@ const printLabel = async (html: string): Promise<any> => {
         try {
             const puppeteerInstance = await puppeteer.launch({
                 // headless: true,
-                executablePath:"~/.cache/puppeteer",
-                args: [
-                ]
+                args: ['--no-sandbox']
             });
             const page = await puppeteerInstance.newPage();
             await page.setContent(html, { waitUntil: 'networkidle0', timeout: 30000 });
