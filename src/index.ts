@@ -16,9 +16,8 @@ const printLabel = async (html: string): Promise<any> => {
         try {
             const puppeteerInstance = await puppeteer.launch({
                 // headless: true,
+                executablePath:"~/.cache/puppeteer",
                 args: [
-                    '--start-maximized', // you can also use '--start-fullscreen'
-                    '--start-fullscreen',
                 ]
             });
             const page = await puppeteerInstance.newPage();
