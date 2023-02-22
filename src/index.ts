@@ -10,7 +10,8 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-import rendertron from 'rendertron-middleware';
+import * as rendertron from 'rendertron-middleware';
+import Chromium from 'chrome-aws-lambda';
 app.use(rendertron.makeMiddleware({
     proxyUrl: 'http://my-rendertron-instance/render',
 }));
@@ -23,7 +24,7 @@ const printLabel = async (html: string): Promise<any> => {
     return new Promise(async (resolve) => {
         try {
             // const sd = await ChromeLauncher.launch();
-            console.log("PATH", ChromeLauncher.getChromePath())
+            console.log("PATH", await Chromium.executablePath)
             const puppeteerInstance = await puppeteer.launch({
                 // headless: true,
                 executablePath: ChromeLauncher.getChromePath(),
