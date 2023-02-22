@@ -10,6 +10,13 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+import rendertron from 'rendertron-middleware';
+app.use(rendertron.makeMiddleware({
+    proxyUrl: 'http://my-rendertron-instance/render',
+}));
+
+app.use(express.static('files'));
+
 const indexPage = filedir + "/index.html";
 
 const printLabel = async (html: string): Promise<any> => {
